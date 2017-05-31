@@ -1,0 +1,30 @@
+//CSS
+#tableID table {
+  border: 1px solid #666;
+  width: 100%;
+}
+#map {
+        height: 400px;
+        width: 400px;
+       }
+th {
+  background: #f8f8f8;
+  font-weight: bold;
+  padding: 2px;
+}
+
+.leftAlign {
+  text-align: left;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.selected{
+  background-color: yellow;
+}

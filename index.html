@@ -1,0 +1,23 @@
+<div ng-app="listingsApp" ng-controller="dataCtrl">
+  <div>
+    <table class="item-{{$index}}" ng-repeat="address in dataBack" style="width:100%">    
+      <tr>
+        <td  class="leftAlign">Street - {{address.Property.Address.StreetNumber}}, {{address.Property.Address.StreetName}}</td>
+        <td  class="rightAlign">{{address.Listing.Transaction==="Rent" ? address.Listing.Price:address.Listing.Price|currency:"$"}}{{address.Listing.Transaction==="Sale" ? "":" per month"}}</td>
+      </tr>
+      <tr>
+        <td  class="leftAlign">Transaction - {{address.Listing.Transaction}}</td>
+      </tr>
+      <tr>
+        <td  colspan=2 class="centerAlign">OpenHouses</td>
+      </tr>
+      <tr ng-repeat="times in address.Listing.OpenHouses" ng-init="myDate=parseDate(times.Date,times.StartTime,times.EndTime)">
+        <td class="centerAlign" colspan=2>{{myDate}}</td>
+      </tr>      
+    </table>
+  </div>
+</div>
+<h3>My Google Maps Demo</h3>
+<div id="map"></div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA3SNfCgzsI8M3dxhI1Q92X5241D1VAMs">
+</script>
